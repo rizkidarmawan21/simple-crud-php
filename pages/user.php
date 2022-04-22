@@ -83,6 +83,21 @@ if (!isset($_SESSION['username'])) {
             <span>Username :</span>
             <input type="text" name="username" placeholder="username">
         </div>
+        <div>
+            <span>Email :</span>
+            <input type="email" name="email" placeholder="email">
+        </div>
+        <div>
+            <span>Telepon :</span>
+            <input type="number" name="telp" placeholder="telepon">
+        </div>
+        <div>
+            <span>Peran :</span>
+            <select name="peran" id="">
+                <option value="ADMIN">ADMIN</option>
+                <option value="USER">USER</option>
+            </select>
+        </div>
         <div class="">
             <span>Password :</span>
             <input type="text" name="password" placeholder="password">
@@ -95,8 +110,11 @@ if (!isset($_SESSION['username'])) {
 
     <table>
         <tr>
-            <th>Username</th>
+            <th>Username / Nama</th>
+            <th>Email</th>
             <th>Password</th>
+            <th>Telepon</th>
+            <th>Peran / Roles</th>
             <th>Aksi</th>
         </tr>
         <?php
@@ -105,7 +123,10 @@ if (!isset($_SESSION['username'])) {
         while ($row = mysqli_fetch_array($data)) {
             echo "<tr>";
             echo "<td>" . $row['username'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['password'] . "</td>";
+            echo "<td>" . $row['telp'] . "</td>";
+            echo "<td>" . $row['peran'] . "</td>";
             echo "<td><a href='../pages/editUser.php?id=" . $row['id'] . "'>Edit</a> | <a href='../user/function.php?status=delete&id=" . $row['id'] . "'>Delete</a></td>";
             echo "</tr>";
         }

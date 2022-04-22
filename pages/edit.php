@@ -33,13 +33,22 @@ if (isset($_GET['id'])) {
             <span>Harga Barang :</span>
             <input type="number" name="price" value="<?= $data['price'] ?>" placeholder="harga barang">
         </div>
+        <div class="">
+            <span>Jumlah Stok :</span>
+            <input type="number" name="jml_stok" value="<?= $data['jml_stok'] ?>" placeholder="Jumlah Stok">
+        </div>
         <div>
             <span>Pilih Gambar :</span>
             <input type="hidden" name="imageOld" value="<?= $data['image'] ?>">
             <input type="file" name="image">
+            <br>
+            <br>
+            <span>Gambar Lama</span>
+            <br>
+            <img src="../assets/<?= $data['image'] ?>" alt="" width="100">
         </div>
         <br>
-        <button type="submit" name="update">Tambah</button>
+        <button type="submit" name="update">Edit</button>
     </form>
 </body>
 </html>

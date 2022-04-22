@@ -83,6 +83,10 @@ if (!isset($_SESSION['username'])) {
             <input type="text" name="title" placeholder="nama barang">
         </div>
         <div class="">
+            <span>Jumlah Stok :</span>
+            <input type="number" name="jml_stok" placeholder="Jumlah Stok">
+        </div>
+        <div class="">
             <span>Harga Barang :</span>
             <input type="number" name="price" placeholder="harga barang">
         </div>
@@ -100,6 +104,7 @@ if (!isset($_SESSION['username'])) {
         <tr>
             <th>Nama Produk</th>
             <th>Harga</th>
+            <th>Jumlah Stok</th>
             <th>Gambar</th>
             <th>Aksi</th>
         </tr>
@@ -109,6 +114,7 @@ if (!isset($_SESSION['username'])) {
         while ($row = mysqli_fetch_array($data)) {
             echo "<tr>";
             echo "<td>" . $row['title'] . "</td>";
+            echo "<td>" . $row['jml_stok'] . "</td>";
             echo "<td>" . $row['price'] . "</td>";
             echo "<td><img src='../assets/".$row['image']."' alt='Avatar' style='width:100px'></td>";
             echo "<td><a href='../pages/edit.php?id=" . $row['id'] . "'>Edit</a> | <a href='../manage-product/delete.php?id=" . $row['id'] . "'>Delete</a></td>";

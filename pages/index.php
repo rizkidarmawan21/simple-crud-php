@@ -96,7 +96,7 @@ if (!isset($_SESSION['username'])) {
     </nav>
 
     <h1>List Produk</h1>
-    <h3>Selamat Datang <u><?= $_SESSION['username'] ?></u></h3>
+    <h3>Selamat Datang <u><?= $_SESSION['username']['username'] ?></u> login sebagai <?= $_SESSION['username']['peran'] ?></h3>
 
     <div class="flex-container">
 
@@ -111,7 +111,8 @@ if (!isset($_SESSION['username'])) {
                     <img src="../assets/<?= $row['image'] ?>" alt="Avatar" style="width:100px">
                     <div class="container">
                         <h4><b><?= $row['title'] ?></b></h4>
-                        <p><?= $row['price'] ?></p>
+                        <p>Stok Tersedia <?= $row['jml_stok'] ?></p>
+                        <p>Rp. <?= $row['price'] ?></p>
                     </div>
                 </div>
             </div>

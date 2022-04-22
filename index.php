@@ -42,8 +42,8 @@
         <br>
         <form action="auth/login.php" method="POST">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">

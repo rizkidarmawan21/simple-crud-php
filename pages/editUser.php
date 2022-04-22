@@ -26,11 +26,26 @@ if (isset($_GET['id'])) {
     <form action="../user/function.php" method="POST">
         <input type="hidden" name="id" value="<?= $data['id'] ?>">
         <div>
-            <span>Nama Barang :</span>
+            <span>Username :</span>
             <input type="text" name="username" value="<?= $data['username'] ?>" placeholder="Username">
         </div>
+        <div>
+            <span>Email :</span>
+            <input type="text" name="email" value="<?= $data['email'] ?>" placeholder="email">
+        </div>
+        <div>
+            <span>Telepon :</span>
+            <input type="text" name="telp" value="<?= $data['telp'] ?>" placeholder="telp">
+        </div>
+        <div>
+            <span>Peran :</span>
+            <select name="peran" id="">
+                <option value="ADMIN" <?= $data['peran'] === 'ADMIN' ? 'selected' : '' ?> >ADMIN</option>
+                <option value="USER" <?= $data['peran'] === 'USER' ? 'selected' : '' ?>>USER</option>
+            </select>
+        </div>
         <div class="">
-            <span>Harga Barang :</span>
+            <span>Password :</span>
             <input type="text" name="password" value="<?= $data['password'] ?>" placeholder="Password">
         </div>
         <br>

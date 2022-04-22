@@ -3,11 +3,13 @@ session_start();
 $query = include '../connect.php';
 
 if(isset($_POST['login'])){
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
+    $query = "SELECT `username`,`peran` FROM user WHERE email= '$email' AND password = '$password'";
     $result = mysqli_query($conn, $query);
+
+    $username = mysqli_fetch_assoc($result);
 
     if(mysqli_num_rows($result) == 1){
         $_SESSION['username'] = $username;

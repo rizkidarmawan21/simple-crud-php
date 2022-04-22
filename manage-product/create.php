@@ -6,6 +6,7 @@ $query = include '../connect.php';
 if (isset($_POST['tambah'])) {
     $title = $_POST['title'];
     $price = $_POST['price'];
+    $jml_stok = $_POST['jml_stok'];
     $image = $_FILES['image']['name'];
     $tmp = $_FILES['image']['tmp_name'];
 
@@ -16,7 +17,7 @@ if (isset($_POST['tambah'])) {
 
     $path = "../assets/" . $image;
     move_uploaded_file($tmp, $path);
-    $query = "INSERT INTO product (title, price,image) VALUES ('$title','$price','$image')";
+    $query = "INSERT INTO product (title, price,jml_stok,image) VALUES ('$title','$price','$jml_stok','$image')";
     $result = mysqli_query($conn, $query);
 
     echo $_FILES['image']['error'];
